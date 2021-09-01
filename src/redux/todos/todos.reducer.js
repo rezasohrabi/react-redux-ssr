@@ -30,17 +30,47 @@ const INITIAL_STATE = {
     ]
 }
 
-const rootReducer = (state=INITIAL_STATE, action) => {
-    switch(action.type) {
-        case todosTypes.REMOVE_TODO : 
-        console.log('todos redux',state.todos)
-        return {
-            ...state,
-        }
-        default:
-            return state;
+const todosReducer = (state = INITIAL_STATE, action) => {
+  switch (action.type) {
+    case todosTypes.REMOVE_TODO:
+      console.log('redux state', whatIsIt(state))
+      return {
+        ...state,
+        todos: state.todos && state.todos.filter(
+          (todo) => {
+            console.log('todo::',todo)
+            return todo.id !== action.payload
+          }
+        ),
+      };
+    default:
+      return state;
+  }
+};
+
+export default todosReducer;
+
+var stringConstructor = "test".constructor;
+var arrayConstructor = [].constructor;
+var objectConstructor = ({}).constructor;
+
+function whatIsIt(object) {
+    if (object === null) {
+        return "null";
     }
-
+    if (object === undefined) {
+        return "undefined";
+    }
+    if (object.constructor === stringConstructor) {
+        return "String";
+    }
+    if (object.constructor === arrayConstructor) {
+        return "Array";
+    }
+    if (object.constructor === objectConstructor) {
+        return "Object";
+    }
+    {
+        return "don't know";
+    }
 }
-
-export default rootReducer;
