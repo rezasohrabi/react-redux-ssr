@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.header {
+  height: 90px;
+  background-color: #efefef;
+  color: #333;
+}
+
+.todos {
+  list-style: none;
+}
+
+.todos li {
+    background: #f6f6f6;
+    border: 1px solid #bbbbbb;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 1px 2px 3px 6px #d5d5d529;
+    margin-bottom: 20px;
+}
+
+.header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  direction: ltr;
+  background: #40403f;
+  color: #fff;
+}
+
+.header a {
+  color: #fff !important;
+  text-decoration: none;
+  margin: 0 20px;
+}
