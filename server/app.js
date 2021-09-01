@@ -1,12 +1,12 @@
 import express from 'express'
 import path from 'path'
-import template from './src/template'
+import template from './template'
 import ssr from './server'
 
 const app = express()
 
-app.use('/assets', express.static(path.resolve(__dirname, 'assets')));
-app.use('/media', express.static(path.resolve(__dirname, 'media')));
+app.use('/assets', express.static(path.resolve(__dirname, '..','assets')));
+app.use('/media', express.static(path.resolve(__dirname, '..','media')));
 
 app.disable('x-powered-by');
 app.listen(process.env.PORT || 3000);

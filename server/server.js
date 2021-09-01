@@ -2,10 +2,9 @@ import React from 'react'
 import { renderToString } from 'react-dom/server'
 
 import { Provider } from 'react-redux'
-import configureStore from './src/redux/configureStore'
 import { createStore } from 'redux'
-import rootReducer from './src/redux/rootReducer'
-import App from './src/components/App'
+import rootReducer from '../src/redux/rootReducer'
+import App from '../src/components/App'
 
 
 module.exports = function render() {
