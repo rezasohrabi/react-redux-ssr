@@ -7,7 +7,7 @@ import rootReducer from '../src/redux/rootReducer'
 import App from '../src/components/App'
 
 
-module.exports = function render() {
+module.exports = function ssr() {
   const store = createStore(rootReducer)
   let content = renderToString(
     <Provider store={store} >

@@ -1,7 +1,7 @@
 import express from 'express'
 import path from 'path'
 import template from './template'
-import ssr from './server'
+import ssr from './ssr'
 
 const app = express()
 
