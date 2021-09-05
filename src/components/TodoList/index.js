@@ -36,7 +36,7 @@ const TodoList = (props) => {
             </div>
             <ul className='todos'>
                 {todos.map(todo => (
-                <li key={todo.id}><div>Name: {todo.name}</div><div>Username: {todo.username}</div><div>website :{todo.website}</div><button onClick={event => handleRemoveTodo(todo.id)}>remove todo</button></li>
+                <li key={todo.id} className='card'><div>Name: {todo.name}</div><div>Username: {todo.username}</div><div>website :{todo.website}</div><button onClick={event => handleRemoveTodo(todo.id)}>remove todo</button></li>
                 ))}
             </ul>
         </>
