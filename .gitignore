@@ -3,3 +3,4 @@ node_modules
 package-lock.json
 assets/client.js
 .vscode/
+assets/server.js

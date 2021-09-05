@@ -7,10 +7,9 @@ import rootReducer from '../src/redux/rootReducer'
 import App from '../src/components/App'
 
 
-module.exports = function ssr(req) {
+const ssr = (req) =>{
   const store = createStore(rootReducer);
   const context = {};
-  console.log("hotttttttttt reload", req)
   let content = renderToString(
     <Provider store={store} >
       <StaticRouter location={req.location} context={context}>
@@ -19,7 +18,8 @@ module.exports = function ssr(req) {
     </Provider>
   );
   const preloadedState = store.getState()
-  console.log("preloadedState:",preloadedState, "content:",content)
 
   return {content, preloadedState};
 }
+
+export default ssr;
