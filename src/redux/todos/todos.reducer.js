@@ -33,7 +33,6 @@ const INITIAL_STATE = {
 const todosReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case todosTypes.REMOVE_TODO:
-      console.log('redux state', whatIsIt(state))
       return {
         ...state,
         todos: state.todos && state.todos.filter(
@@ -54,28 +53,3 @@ const todosReducer = (state = INITIAL_STATE, action) => {
 };
 
 export default todosReducer;
-
-var stringConstructor = "test".constructor;
-var arrayConstructor = [].constructor;
-var objectConstructor = ({}).constructor;
-
-function whatIsIt(object) {
-    if (object === null) {
-        return "null";
-    }
-    if (object === undefined) {
-        return "undefined";
-    }
-    if (object.constructor === stringConstructor) {
-        return "String";
-    }
-    if (object.constructor === arrayConstructor) {
-        return "Array";
-    }
-    if (object.constructor === objectConstructor) {
-        return "Object";
-    }
-    {
-        return "don't know";
-    }
-}

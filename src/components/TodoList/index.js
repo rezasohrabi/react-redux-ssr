@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchTodosStart, removeTodo } from '../../redux/todos/todos.actions';
-import  './styles.css';
+import "./styles.css";
 
 const mapState = (state) => ({
     todos: state.todosData.todos,
@@ -10,7 +10,6 @@ const mapState = (state) => ({
 const TodoList = (props) => {
     const {todos} = useSelector(mapState);
     const dispatch = useDispatch();
-    console.log('todossssssssssssssssssssssss:',todos)
     const [toggle, setToggle] = useState(false)
   
     useEffect(() => {

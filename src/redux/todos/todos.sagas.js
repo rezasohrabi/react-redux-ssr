@@ -6,7 +6,6 @@ import todosTypes from "./todos.types";
 export function* fetchTodos() {
     try {
         const fetchedTodos = yield handleFetchTodos();
-        console.log(fetchedTodos);
         yield put(setTodos(fetchedTodos))
     }catch(error) {
         console.error(error)
