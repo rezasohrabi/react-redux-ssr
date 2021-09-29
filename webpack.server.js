@@ -10,16 +10,17 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'assets'),
-    filename: 'server.js'
+    filename: 'server.js',
   },
 
   module: {
     rules: [
-      { test: /\.js$/, use: 'babel-loader'},
-      { test: /\.css$/, use: [
-        { loader: 'css-loader' },
-        ] 
+      { test: /\.js$/, use: 'babel-loader' },
+      { test: /\.css$/, use: [{ loader: 'css-loader' }] },
+      {
+        test: /\.s[ac]ss$/i,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
-    ]
-  }
+    ],
+  },
 };
