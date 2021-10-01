@@ -1,19 +1,19 @@
-import React from 'react'
-import {hydrate} from 'react-dom'
-import {Provider} from 'react-redux'
-import { BrowserRouter } from 'react-router-dom'
-import configureStore from './redux/configureStore'
-import App from './components/App'
+import React from 'react';
+import { hydrate } from 'react-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import configureStore from './redux/configureStore';
+import App from './components/App';
 
 const preloadedState = window.__PRELOADED_STATE__;
 delete window.__PRELOADED_STATE__;
-const store = configureStore( preloadedState)
+const store = configureStore(preloadedState);
 
 hydrate(
-  <Provider store={store} >
+  <Provider store={store}>
     <BrowserRouter>
-     <App />
-     </BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
-)
+);

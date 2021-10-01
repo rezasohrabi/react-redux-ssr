@@ -6,7 +6,11 @@
     "start": "npm run build:client && npm run build:server && node assets/server.js",
     "build:client": "webpack --config webpack.client.js",
     "build:server": "webpack --config webpack.server.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint-staged": "lint-staged",
+    "lint:fix": "eslint src/*.js --fix",
+    "lint": "eslint src/*.js",
+    "prettify": "prettier src/*.js --write"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -29,12 +33,28 @@
     "@babel/register": "^7.15.3",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.2.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.26.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
     "nodemon": "^2.0.12",
+    "prettier": "^2.4.1",
     "sass": "^1.39.0",
     "sass-loader": "^12.1.0",
     "style-loader": "^3.2.1",
     "webpack": "^5.52.0",
     "webpack-cli": "^4.8.0",
     "webpack-node-externals": "^3.0.0"
+  },
+  "lint-staged": {
+    "*.(js|html|css)": [
+      "prettier --write",
+      "git add"
+    ],
+    ".js": [
+      "npm run lint:fix",
+      "npm run lint"
+    ]
   }
 }

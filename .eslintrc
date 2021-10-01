@@ -1,0 +1,23 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "module"
+  },
+
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true
+  },
+  "rules": {
+    "semi": ["error", "always"],
+    "quotes": ["error", "single"]
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended","prettier"],
+  "plugins": ["react"],
+  "settings": {
+    "react": {
+      "version": "latest"
+    }
+  }
+}
