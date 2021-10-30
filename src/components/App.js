@@ -4,11 +4,7 @@ import MainLayout from '../layouts/Main';
 import ImageList from './ImageList';
 import TodoList from './TodoList';
 
-
-
-
 const App = (props) => {
-
   return (
     // <Switch>
     //   <Route exact path='/' render={() => {
@@ -23,7 +19,7 @@ const App = (props) => {
     //   }} />
     // </Switch>
     <TodoList />
-  )
-}
+  );
+};
 
 export default App;
