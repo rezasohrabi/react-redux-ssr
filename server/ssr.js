@@ -11,7 +11,7 @@ const ssr = (req) => {
   const context = {};
   let content = renderToString(
     <Provider store={store}>
-      <StaticRouter location={req.location} context={context}>
+      <StaticRouter location={req.url} context={context}>
         <App />
       </StaticRouter>
     </Provider>
