@@ -10,7 +10,7 @@
     "lint-staged": "lint-staged",
     "lint:fix": "eslint src/*.js --fix",
     "lint": "eslint src/*.js",
-    "prettify": "prettier src/*.js --write"
+    "prettify": "prettier src server --write"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -48,13 +48,8 @@
     "webpack-node-externals": "^3.0.0"
   },
   "lint-staged": {
-    "*.(js|html|css)": [
-      "prettier --write",
-      "git add"
-    ],
-    ".js": [
-      "npm run lint:fix",
-      "npm run lint"
+    "*.{js,jsx,ts,tsx,css,scss,md}": [
+      "prettier --write"
     ]
   }
 }
