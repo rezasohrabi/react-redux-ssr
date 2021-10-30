@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { StaticRouter } from 'react-router-dom';
 import rootReducer from '../src/redux/rootReducer';
-import App from '../src/components/App';
+import App from '../src/App';
 
 const ssr = (req) => {
   const store = createStore(rootReducer);
