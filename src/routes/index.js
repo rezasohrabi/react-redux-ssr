@@ -1,5 +1,5 @@
 import { HomePage, UsersPage } from '../pages';
-import UsersPage from '../pages/UsersPage';
+
 const paths = [
   {
     path: '/',
@@ -7,9 +7,9 @@ const paths = [
     component: HomePage,
   },
   {
-      path: '/users',
-      component: UsersPage,
-  }
+    path: '/users',
+    component: UsersPage,
+  },
 ];
 
 export default paths;
