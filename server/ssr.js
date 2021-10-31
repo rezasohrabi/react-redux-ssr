@@ -7,10 +7,18 @@ import rootReducer from '../src/redux/rootReducer';
 import App from '../src/App';
 import routes from '../src/routes';
 
-
+const getInitialData = (activeRoute) => {
+  if (activeRoute?.component.getInitialProps) {
+    const requestInitialData = activeRoute.component.getInitialProps();
+    return Promise.resolve(requestInitialData).then(
+      (initialData) => initialData
+    );
+  }
+};
 
 const ssr = async (req) => {
   const activeRoute = routes.find((route) => matchPath(req.url, route));
+  const initialProps = await getInitialData(activeRoute);
 
   const store = createStore(rootReducer);
   const context = { initialProps };
