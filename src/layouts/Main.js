@@ -1,18 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const MainLayout = ({children}) => {
-    return (
-        <main>
-            <header className='header'>
-                <a href='#'>تصاوير</a>
-                <a href='#'>ليست يادداشت ها</a>
-            </header>
-            <section className='main-content'>
-                {children}
-            </section>
-        </main>
-
-    )
-}
+const MainLayout = ({ children }) => {
+  return (
+    <main>
+      <header className='header'>
+        <Link to='/users'>کاربران</Link>
+        <Link to='/'>خانه</Link>
+      </header>
+      <section className='main-content'>{children}</section>
+    </main>
+  );
+};
 
 export default MainLayout;

@@ -1,11 +1,13 @@
-export default function template(title, preloadedState = {}, content = "") {
+export default function template(title, preloadedState = {}, content = '') {
   let scripts = '';
   if (content) {
     scripts = ` <script>
-              window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(/</g,'\\u003c')}
+              window.__PRELOADED_STATE__ = ${JSON.stringify(
+                preloadedState
+              ).replace(/</g, '\\u003c')}
                 </script>
                 <script src="assets/client.js"></script>
-                `
+                `;
   }
   let page = `<!DOCTYPE html>
               <html lang="en">

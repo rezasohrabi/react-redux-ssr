@@ -1,27 +1,28 @@
 ul {
-    padding: 30px;
+  padding: 30px;
 }
 .card {
-    font-size: 18px;
-    border: none !important;
-    box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12) !important;
-    margin-bottom: 30px;
+  font-size: 18px;
+  border: none !important;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12) !important;
+  margin-bottom: 30px;
 }
 .card div {
-    padding: 10px;
+  padding: 10px;
 }
 button {
-    border: none;
-    background: #1976d2;
-    padding: 10px;
-    border-radius: 3px;
-    color: #fff;
-    margin: 8px;
-    cursor: pointer;
+  border: none;
+  background: #1976d2;
+  padding: 10px;
+  border-radius: 3px;
+  color: #fff;
+  margin: 8px;
+  cursor: pointer;
 }
 .card button {
-    border: 1px solid #1976d2;
-    background: #fff;
-    color: #1976d2;
-    cursor: pointer;
+  border: 1px solid #1976d2;
+  background: #fff;
+  color: #1976d2;
+  cursor: pointer;
 }
