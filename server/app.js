@@ -12,8 +12,14 @@ app.disable('x-powered-by');
 app.listen(process.env.PORT || 3000);
 
 app.get('*', (req, res) => {
-  const { preloadedState, content } = ssr(req);
-  const response = template('Server Rendered Page', preloadedState, content);
-  //res.setHeader('Cache-Control', 'assets, max-age=604800')
-  res.send(response);
+  ssr(req).then((data) => {
+    const response = template(
+      'Server Rendered Page',
+      data.preloadedState,
+      data.content,
+      data.initialProps
+    );
+    //res.setHeader('Cache-Control', 'assets, max-age=604800')
+    res.send(response);
+  });
 });
