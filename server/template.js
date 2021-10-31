@@ -1,11 +1,19 @@
-export default function template(title, preloadedState = {}, content = '') {
+import serialize from 'serialize-javascript';
+
+export default function template(
+  title,
+  preloadedState = {},
+  content = '',
+  initialProps
+) {
   let scripts = '';
   if (content) {
     scripts = ` <script>
-              window.__PRELOADED_STATE__ = ${JSON.stringify(
-                preloadedState
-              ).replace(/</g, '\\u003c')}
+              window.__PRELOADED_STATE__ = ${serialize(preloadedState)}
                 </script>
+                <script>
+                window.__INITIAL_PROPS__ = ${serialize(initialProps)}
+                <script>
                 <script src="assets/client.js"></script>
                 `;
   }
