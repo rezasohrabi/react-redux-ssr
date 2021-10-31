@@ -1,5 +1,6 @@
 import React from 'react';
 import MainLayout from '../layouts/Main';
+import fetch from 'isomorphic-fetch';
 
 const UsersPage = (props) => {
   return <MainLayout>his is users page</MainLayout>;
@@ -8,7 +9,11 @@ const UsersPage = (props) => {
 UsersPage.getInitialProps = () => {
   return fetch('https://jsonplaceholder.typicode.com/users')
     .then((response) => response.json())
-    .catch((error) => console.log(error));
+    .then((data) => data)
+    .catch((error) => {
+      console.warn(error);
+      return null;
+    });
 };
 
 export default UsersPage;
