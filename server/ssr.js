@@ -6,6 +6,7 @@ import { StaticRouter, matchPath } from 'react-router-dom';
 import rootReducer from '../src/redux/rootReducer';
 import App from '../src/App';
 import routes from '../src/routes';
+import { Helmet } from 'react-helmet';
 
 const getInitialData = (activeRoute) => {
   if (activeRoute?.component.getInitialProps) {
@@ -29,9 +30,10 @@ const ssr = async (req) => {
       </StaticRouter>
     </Provider>
   );
+  const helmet = Helmet.renderStatic();
   const preloadedState = store.getState();
 
-  return { content, preloadedState, initialProps };
+  return { content, preloadedState, initialProps, helmet };
 };
 
 export default ssr;
