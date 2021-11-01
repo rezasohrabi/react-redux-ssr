@@ -22,7 +22,7 @@ const TableRows = ({ users }) => {
   const rows = users.map((user, index) => (
     <tr key={index}>
       {Object.keys(user).map((key, i) => (
-        <td key={i}>{user[key].toString()}</td>
+        <td key={i}>{JSON.stringify(user[key])}</td>
       ))}
     </tr>
   ));
