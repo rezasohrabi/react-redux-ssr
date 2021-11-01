@@ -1,4 +1,4 @@
-import { HomePage, UsersPage } from '../pages';
+import { HomePage, UsersPage, PhotosPage } from '../pages';
 
 const paths = [
   {
@@ -10,6 +10,10 @@ const paths = [
     path: '/users',
     component: UsersPage,
   },
+  {
+    path: '/photos',
+    component: PhotosPage
+  }
 ];
 
 export default paths;
