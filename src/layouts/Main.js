@@ -5,6 +5,7 @@ const MainLayout = ({ children }) => {
   return (
     <main>
       <header className='header'>
+      <Link to='/photos'>تصاویر</Link>
         <Link to='/users'>کاربران</Link>
         <Link to='/'>خانه</Link>
       </header>
