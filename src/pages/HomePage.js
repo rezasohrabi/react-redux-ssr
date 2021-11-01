@@ -9,7 +9,7 @@ const HomePage = (props) => {
         {props.staticContext.initialProps.map((post, index) => (
           <li key={index}>
             {Object.keys(post).map((key, i) => (
-              <div key={i}>{key}</div>
+              <div key={i}>{post[key]}</div>
             ))}
           </li>
         ))}
