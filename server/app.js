@@ -14,10 +14,10 @@ app.listen(process.env.PORT || 3000);
 app.get('*', (req, res) => {
   ssr(req).then((data) => {
     const response = template(
-      'Server Rendered Page',
       data.preloadedState,
       data.content,
-      data.initialProps
+      data.initialProps,
+      data.helmet
     );
     //res.setHeader('Cache-Control', 'assets, max-age=604800')
     res.send(response);

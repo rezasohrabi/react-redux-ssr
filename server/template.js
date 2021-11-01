@@ -1,10 +1,10 @@
 import serialize from 'serialize-javascript';
 
 export default function template(
-  title,
   preloadedState = {},
   content = '',
-  initialProps
+  initialProps,
+  helmet
 ) {
   let scripts = '';
   if (content) {
@@ -18,13 +18,16 @@ export default function template(
                 `;
   }
   let page = `<!DOCTYPE html>
-              <html lang="en">
+              <html ${helmet.htmlAttributes.toString()}>
               <head>
                 <meta charset="utf-8">
-                <title> ${title} </title>
+                ${helmet.title.toString()}
+                ${helmet.meta.toString()}
+                ${helmet.link.toString()}
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <link rel="stylesheet" href="assets/style.css">
               </head>
-              <body>
+              <body ${helmet.bodyAttributes.toString()}>
                 <div class="content">
                    <div id="root" class="wrap-inner">${content}</div>
                 </div>${scripts}
