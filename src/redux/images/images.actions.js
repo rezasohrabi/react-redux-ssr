@@ -1,6 +1,6 @@
-import { imagesTypes } from "./images.types";
+import { imagesTypes } from './images.types';
 
 export const removeImage = (imageId) => ({
-    type: imagesTypes.REMOVE_IMAGE,
-    payload: imageId,
-})
+  type: imagesTypes.REMOVE_IMAGE,
+  payload: imageId,
+});
