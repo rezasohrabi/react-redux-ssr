@@ -13,13 +13,15 @@ const ImageItem = ({ image }) => {
 };
 
 const PhotosPage = (props) => {
-  console.log(props.staticContext.initialProps);
   return (
     <MainLayout>
       <Helmet>
         <title>photos page</title>
         <meta name='description' content='there is great photos look' />
-        <meta name='keywords' content='photos, user photos, albums' />
+        <meta
+          name='keywords'
+          content='photos, user photos, albums'
+        />
         <meta name='author' content='Jon Due' />
       </Helmet>
       {props.staticContext.initialProps.map((image) => (
