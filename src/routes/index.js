@@ -12,8 +12,8 @@ const paths = [
   },
   {
     path: '/photos',
-    component: PhotosPage
-  }
+    component: PhotosPage,
+  },
 ];
 
 export default paths;
