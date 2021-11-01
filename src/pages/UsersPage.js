@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import MainLayout from '../layouts/Main';
 import fetch from 'isomorphic-fetch';
 import './UsersPage.scss';
@@ -32,6 +33,12 @@ const TableRows = ({ users }) => {
 const UsersPage = (props) => {
   return (
     <MainLayout>
+      <Helmet>
+        <title>photos page</title>
+        <meta name='description' content='there is great photos look' />
+        <meta name='keywords' content='photos, user photos, albums' />
+        <meta name='author' content='Jon Due' />
+      </Helmet>
       <table className='table'>
         <TableHeader />
         <TableRows users={props.staticContext.initialProps} />
