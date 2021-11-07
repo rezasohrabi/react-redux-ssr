@@ -28,5 +28,10 @@ module.exports = {
     new webpack.DefinePlugin({
       __isBrowser__: JSON.stringify(false),
     })
-  ]
+  ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src/')
+    }
+  }
 };
